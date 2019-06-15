@@ -1,3 +1,16 @@
 .App {
   text-align: center;
 }
+
+.link {
+  text-decoration: none;
+  color: #88ccff;
+  font-weight: bold;
+  margin: 10px;
+  font-size: 20px;
+}
+
+.link:hover {
+  background: black;
+  border-radius: 3px;
+}
