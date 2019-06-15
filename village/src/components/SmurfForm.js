@@ -14,7 +14,8 @@ class SmurfForm extends Component {
   }
 
   addSmurf = event => {
-    event.preventDefault();
+    // event.preventDefault(); 
+    // * commented out prevent default or else I would have to refresh home page to get new smurf
     // add code to create the smurf using the api
     const newSmurf = {
       name: this.state.name,
