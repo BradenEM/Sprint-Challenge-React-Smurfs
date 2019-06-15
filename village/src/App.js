@@ -26,6 +26,15 @@ class App extends Component {
       .catch(err => console.log(err));
   }
 
+  handleDelete = e => {
+    e.preventDefault();
+    axios
+      .delete(`http://localhost:3333/smurfs/${e.target.value}`)
+      .then(response => {
+        this.setState({ smurfs: response.data });
+      });
+  };
+
   render() {
     return (
       <div className="App">
@@ -39,7 +48,12 @@ class App extends Component {
         <Route
           path="/"
           exact
-          render={() => <Smurfs smurfs={this.state.smurfs} />}
+          render={() => (
+            <Smurfs
+              smurfs={this.state.smurfs}
+              handleDelete={this.handleDelete}
+            />
+          )}
         />
         <Route
           path="/form"
